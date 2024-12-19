@@ -1,0 +1,13 @@
+# k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: bookapi-service
+spec:
+  type: NodePort
+  selector:
+    app: bookapi
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30000  # This will make the app accessible on localhost:30000
