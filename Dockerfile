@@ -1,11 +1,11 @@
+# Use OpenJDK 17 as the base image
+FROM eclipse-temurin:17-jdk-alpine
+
 # Create a new user
-RUN useradd -ms /bin/bash appuser
+RUN adduser -D -s /bin/bash appuser
 
 # Set non-root user
 USER appuser
-
-# Use OpenJDK 17 as the base image
-FROM eclipse-temurin:17-jdk-alpine
 
 # Set working directory
 WORKDIR /app
